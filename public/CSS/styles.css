@@ -1,3 +1,26 @@
+body {
+    background-color: rgb(255, 250, 244);
+}
+
+
+
+/* landing page */
+
+.account {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
 .message {
     margin-left: 30px;
     margin-right: 30px;
@@ -9,4 +32,5 @@
 
 .friend {
     margin-top: 3%;
+    /* font-weight: 500; */
 }

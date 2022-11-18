@@ -17,12 +17,13 @@
 <body class="d-flex align-items-center justify-content-center">
 
 
-    <div class="col-md-5 col-lg-4 form-div ">
-        <form action="/" method="post">
+    <div class="col-md-5  form-div ">
+        <h1 class="account">Create an account</h1>
+        <form class='card p-3 bg-light' action="/" method="post">
 
             <div class="form-group ">
                 <label for="nameInput">Name</label>
-                <input type="text" class="form-control" id="nameInput" placeholder="name" name="name" required>
+                <input type="text" class="form-control" id="nameInput" placeholder="Name" name="name" required>
             </div>
             <div class="form-group ">
                 <label for="emailInput">Email</label>
@@ -38,7 +39,7 @@
                 <div class="form-group col-md-6">
                     <label for="occupationInput">Occupation</label>
                     <select id="occupationInput" class="form-control" name="occupation" required>
-                        <option selected disabled="disabled" value="">Choose...</option>
+                        <option selected disabled="disabled" value="">ex: Web Developer</option>
                         <% for (var i=0; i < occupations.length; i++) { %>
                             <option>
                                 <%= occupations[i] %>
