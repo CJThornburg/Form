@@ -4,6 +4,7 @@ const axios = require('axios');
 const ejs = require("ejs");
 const { response } = require('express');
 const app = express();
+const bcrypt = require('bcryptjs');
 
 app.set("view engine", "ejs");
 app.use(
@@ -49,11 +50,15 @@ app.post("/", function (req, res) {
     const occupation = req.body.occupation;
     const state = req.body.state;
     const stateTrimmed = state.slice(0, -5);
+    
+    var salt = bcrypt.genSaltSync(10);
+    var hash = bcrypt.hashSync(password, salt);
+  
 
     const user = {
     name: name,
     email: email,
-    password: password,
+    password: hash,
     occupation: occupation,
     state: stateTrimmed
     }
