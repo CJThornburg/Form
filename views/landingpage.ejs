@@ -22,32 +22,38 @@
 
             <div class="form-group ">
                 <label for="nameInput">Name</label>
-                <input type="text" class="form-control" id="nameInput" placeholder="name">
+                <input type="text" class="form-control" id="nameInput" placeholder="name" required>
             </div>
             <div class="form-group ">
                 <label for="emailInput">Email</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                <input type="email" class="form-control" id="emailInput" placeholder="Email" required>
             </div>
 
             <div class="form-group">
                 <label for="passwordInput">Password</label>
-                <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                <input type="password" class="form-control" id="passwordInput" placeholder="Password" required>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="occupationInput">Occupation</label>
-                    <select id="occupationInput" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-
-
+                    <select id="occupationInput" class="form-control" required>
+                        <option selected disabled="disabled" value="">Choose...</option>
+                        <% for (var i=0; i < occupations.length; i++) { %>
+                            <option>
+                                <%= occupations[i] %>
+                            </option>
+                            <% } %>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option></option>
+                    <select id="inputState" class="form-control" required>
+                        <option selected disabled="disabled value="">Choose...</option>
+                        <% for (var i=0; i < states.length; i++) { %>
+                            <option>
+                                <%= states[i].name + " (" + states[i].abbreviation + ")" %>
+                        </option>
+                        <% } %>
                     </select>
                 </div>
 

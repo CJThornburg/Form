@@ -22,13 +22,25 @@ app.get('/', function (req, res)  {
     axios
     .get(url)
     .then((response) => {
-      console.log(response)
+      console.log(response.data.occupations[0]);
+      const occupations = response.data.occupations;
+      const states = response.data.states;
+      console.log(states)
+      res.render("landingpage.ejs", {
+        occupations: occupations,
+        states: states
+      })
+     
     })
-    .catch((err) => console.log(err));
-    // const response = await axios.get(url);
-    // console.log(response);
+    .catch((err) => 
+    // add error page
+    res.render("uhoh.ejs")
+    );
     
-    res.render("landingpage.ejs")
+
+
+    
+   
     
 })
 
