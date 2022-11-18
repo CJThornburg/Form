@@ -1,7 +1,7 @@
 # Form
 
 Form submission page with get and post requests. 
-Using bootstap and EJS frameworks
+Using bootstap and EJS frameworks.
 
 
 # Prerequisites
