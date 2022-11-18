@@ -29,6 +29,18 @@ body {
 }
 
 
+.created {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
 @keyframes animate {
     0%{
         transform: translateY(0) rotate(0deg);
