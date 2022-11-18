@@ -3,7 +3,7 @@
 Form submission with get and post requests.
 
 
-# Pre-requisites
+# Prerequisites
 - Install [Node.js](https://nodejs.org/en/)
 
 
