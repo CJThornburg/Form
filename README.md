@@ -9,11 +9,11 @@ Using bootstap and EJS frameworks.
 
 
 # Getting started
-- Clone the repository
+- Clone the repository:
 ```
 git clone https://github.com/CJThornburg/Form.git
 ```
-- Install dependencies
+- Install dependencies:
 ```
 cd FEForm
 npm install
@@ -21,7 +21,7 @@ npm install
 
 
 
-- Run the project
+- Run the project:
 ```
 npm start
 ```
