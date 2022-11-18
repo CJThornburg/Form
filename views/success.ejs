@@ -1,37 +1,17 @@
-<html lang="en">
+<%- include('partials/header') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FE Signup!</title>
+    <body class="d-flex align-items-center justify-content-center">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <div class="center-text">
+            <h1 class="message">
+                Congrates,
+                <%= name %>
+                    your account has been created!
+            </h1>
 
-    <link rel="stylesheet" href="../css/styles.css" />
-</head>
+            <a href="/"> <button class="btn btn-primary friend">Refer a friend</button> </a>
 
-<body class="d-flex align-items-center justify-content-center">
+        </div>
+    </body>
 
-    <div class="center-text">
-        <h1 class="message">
-            Congrates,
-            <%= name %>
-                your account has been created!
-        </h1>
-
-        <a href="/"> <button class="btn btn-primary friend">Refer a friend</button> </a>
-
-    </div>
-
-
-
-</body>
-
-
-
-
-</html>
+    </html>
