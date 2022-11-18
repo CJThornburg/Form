@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const axios = require('axios');
 const ejs = require("ejs");
+const { response } = require('express');
 const app = express();
 
 app.set("view engine", "ejs");
@@ -22,10 +23,8 @@ app.get('/', function (req, res)  {
     axios
     .get(url)
     .then((response) => {
-      console.log(response.data.occupations[0]);
       const occupations = response.data.occupations;
       const states = response.data.states;
-      console.log(states)
       res.render("landingpage.ejs", {
         occupations: occupations,
         states: states
@@ -34,15 +33,55 @@ app.get('/', function (req, res)  {
     })
     .catch((err) => 
     // add error page
-    res.render("uhoh.ejs")
+    res.render("error.ejs", {
+        error: "uh oh looks like the site is down, please try again later!"
+    })
     );
-    
-
-
-    
-   
+      
     
 })
+
+
+app.post("/", function (req, res) {
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password;
+    const occupation = req.body.occupation;
+    const state = req.body.state;
+    const stateTrimmed = state.slice(0, -5);
+
+    const user = {
+    name: name,
+    email: email,
+    password: password,
+    occupation: occupation,
+    state: stateTrimmed
+    }
+
+    const url = "https://frontend-take-home.fetchrewards.com/form"
+    axios.post(url, {
+            name: name,
+            email: email,
+            password: password,
+            occupation: occupation,
+            state: stateTrimmed
+            })
+            .then((response) => {
+                
+                
+                res.render("success.ejs", {
+                    name: response.data.name,
+                  })
+
+              }, (error) => {
+                res.render("error.ejs", {
+                    error: "Uh oh looks like we can't reach our servers, try again later!"
+                  });
+              });
+  
+   
+})
+
 
 app.listen(2000, function() {
     console.log("server has began")
