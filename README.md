@@ -1,6 +1,6 @@
 # Form
 
-Form submission with get and post requests. 
+Form submission page with get and post requests. 
 Using bootstap and EJS frameworks
 
 
